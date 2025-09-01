@@ -1,0 +1,79 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wrap{
+    height: 200px;
+    width: 200px;
+    /* background-color: whitesmoke; */
+}
+.rotate{
+    animation: rotate 1.6s infinite linear;
+    /* 1.6s is the duration of the animation, infinite is the number of times the animation will repeat, linear is the timing function */
+}
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+svg{
+    width: 200px;
+    height: 200px;
+}
+.circular{
+   fill: none;
+   stroke:lightcoral;
+   stroke-width: 6;
+  /* stroke-dasharray: 150, 80; 100px of dash, 30px of space 
+   stroke-dashoffset: 100; 100px of dash, 0px of space */
+   animation: circular-show 1.6s ease-in-out infinite;
+   /* 1.6s is the duration of the animation, ease-in-out is the timing function, infinite is the number of times the animation will repeat */
+
+}
+@keyframes circular-show{
+    0%{
+        stroke-dasharray: 10, 510;
+        stroke-dashoffset: 0;
+    }
+    50%{
+        stroke-dasharray: 170, 510;
+        stroke-dashoffset: -250;
+    }
+    100%{
+        stroke-dasharray: 170, 510;/* 170px of dash, 510px of space */
+        stroke-dashoffset: -510;
+    }
+}
+
+.line{
+
+    fill: none;
+    stroke: lightcoral;
+    stroke-width: 5;
+    animation: line-show 1.6s ease-in-out infinite;
+    /* 1.6s is the duration of the animation, ease-in-out is the timing function, infinite is the number of times the animation will repeat */
+}
+@keyframes line-show{
+    0%{
+        stroke-dasharray: 10, 200;
+        stroke-dashoffset: 0;
+    }
+    50%{
+        stroke-dasharray: 100, 200;
+        stroke-dashoffset: -100;
+    }
+    100%{
+        stroke-dasharray: 100, 200;/* 100px of dash, 100px of space */
+        stroke-dashoffset: -200;
+    }
+}
+/*We define a dash pattern for the stroke: 100 units of dash,
+ followed by 200 units of space*/
+ /**we define a dasharray of 5, 5, 1, 
+ which calls for five units of dash, five of gap, and one unit of dash./
+ /*stroke-dashoffset: 5;  which means 
+ the starting point of the dashes is five units into the dash pattern.*/
